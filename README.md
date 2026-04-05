@@ -373,7 +373,7 @@ VITE_API_URL=https://<your-render-backend-domain>/api
 
 <br/>
 
-**Built with 💜 by [Benny Sangnalkar](https://github.com/Bennyhinn007)**
+**Built with 💜 by [Bennyhinn](https://github.com/Bennyhinn007)**
 
 [![GitHub](https://img.shields.io/badge/GitHub-Bennyhinn007-181717?style=flat-square&logo=github)](https://github.com/Bennyhinn007)
 
