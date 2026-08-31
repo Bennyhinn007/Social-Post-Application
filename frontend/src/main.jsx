@@ -23,9 +23,41 @@ const theme = createTheme({
     h4: {
       letterSpacing: 0.2,
     },
+    button: {
+      textTransform: "none",
+      fontWeight: 600,
+    },
   },
   shape: {
     borderRadius: 12,
+  },
+  components: {
+    MuiButton: {
+      defaultProps: {
+        disableElevation: true,
+      },
+      styleOverrides: {
+        root: {
+          borderRadius: 10,
+        },
+      },
+    },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          transition: "transform 0.15s ease, box-shadow 0.15s ease",
+          "&:hover": {
+            transform: "translateY(-2px)",
+            boxShadow: "0 12px 28px rgba(15, 76, 92, 0.12)",
+          },
+        },
+      },
+    },
+    MuiTextField: {
+      defaultProps: {
+        variant: "outlined",
+      },
+    },
   },
 });
 

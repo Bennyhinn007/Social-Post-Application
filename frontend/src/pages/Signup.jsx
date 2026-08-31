@@ -106,6 +106,7 @@ const Signup = () => {
             onChange={handleChange}
             required
             fullWidth
+            helperText="At least 8 characters, including letters and numbers."
           />
 
           <Button

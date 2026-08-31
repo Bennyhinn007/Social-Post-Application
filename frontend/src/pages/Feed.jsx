@@ -201,9 +201,33 @@ const Feed = () => {
             <CircularProgress />
           </Stack>
         ) : posts.length === 0 ? (
-          <Alert severity="info">
-            No posts yet. Be the first to share something.
-          </Alert>
+          <Stack
+            alignItems="center"
+            spacing={2}
+            sx={{
+              py: 8,
+              px: 3,
+              textAlign: "center",
+              borderRadius: 3,
+              bgcolor: "#fff",
+              border: "1px dashed",
+              borderColor: "divider",
+            }}
+          >
+            <Typography variant="h6" fontWeight={700}>
+              No posts yet
+            </Typography>
+            <Typography color="text.secondary">
+              Be the first to share something with the community.
+            </Typography>
+            <Button
+              variant="contained"
+              onClick={() => setModalOpen(true)}
+              sx={{ borderRadius: 99 }}
+            >
+              Create your first post
+            </Button>
+          </Stack>
         ) : (
           <Stack spacing={3}>
             {posts.map((post) => (
@@ -219,15 +243,17 @@ const Feed = () => {
           </Stack>
         )}
 
-        <Stack direction="row" justifyContent="center" sx={{ mt: 4 }}>
-          <Pagination
-            count={Math.max(totalPages, 1)}
-            page={page}
-            onChange={(event, value) => setPage(value)}
-            color="primary"
-            shape="rounded"
-          />
-        </Stack>
+        {!loadingFeed && posts.length > 0 && totalPages > 1 ? (
+          <Stack direction="row" justifyContent="center" sx={{ mt: 4 }}>
+            <Pagination
+              count={Math.max(totalPages, 1)}
+              page={page}
+              onChange={(event, value) => setPage(value)}
+              color="primary"
+              shape="rounded"
+            />
+          </Stack>
+        ) : null}
 
         <CreatePostModal
           open={modalOpen}
